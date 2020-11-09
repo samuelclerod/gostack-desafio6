@@ -20,6 +20,7 @@ class CreateTransactionService {
     type,
     categoryName,
   }: TransactionRequest): Promise<Transaction> {
+    
     const transactionsRepository = getCustomRepository(TransactionsRepository);
     const { total } = await transactionsRepository.getBalance();
     if (type === 'outcome' && value >= total) {

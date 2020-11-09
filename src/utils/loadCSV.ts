@@ -6,8 +6,6 @@ async function loadCSV(csvFilePath: string): Promise<string[]> {
 
   const parseStream = csvParse({
     from_line: 2,
-    ltrim: true,
-    rtrim: true,
   });
 
   const parseCSV = readCSVStream.pipe(parseStream);
